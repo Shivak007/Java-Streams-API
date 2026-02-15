@@ -8,7 +8,13 @@ public class JavaStreamsDemo {
         List<Integer> numbers = Arrays.asList(12,78,23,98,7,56);
         numbers.stream()
                 .filter(n -> n % 2 == 0)
-                .findFirst()
-                .ifPresent(System.out::println);
+                .min(Integer::compareTo)
+                .ifPresent(min -> System.out.println("Minimum element: " + min));
+
+        numbers.stream()
+                .filter(n -> n % 2 == 0)
+                .max(Integer::compareTo)
+                .ifPresent(max -> System.out.println("Maximum element: " + max));
+
     }
 }
