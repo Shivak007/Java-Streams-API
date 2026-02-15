@@ -6,13 +6,11 @@ public class JavaStreamsDemo {
     public static void main(String[] args) {
 
         List<Integer> numbers = Arrays.asList(12,78,23,98,7,56);
-
-        List<Integer> doubled =
+        List<Integer> evens =
                 numbers.stream()
-                        .map(n -> n * 2)
+                        .filter(n -> n % 2 == 0)
                         .collect(java.util.stream.Collectors.toList());
 
-        System.out.println(doubled);
-
+        System.out.println(evens);
     }
 }
