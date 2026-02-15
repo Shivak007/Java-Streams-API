@@ -8,6 +8,8 @@ public class JavaStreamsDemo {
         List<Integer> numbers = Arrays.asList(12,78,23,98,7,56);
 
         numbers.stream()
+                .map(n -> n * 2)
                 .forEach(System.out::println);
+
     }
 }
